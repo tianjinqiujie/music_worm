@@ -41,7 +41,7 @@ class Singlereptile(object):
                 # {"page": 1981, "num": "20", "totalnum": 0, "code": 0}
                 page += 1
                 resp = requests.post(self.url + self.search, headers = self.headers, data=s)
-                print(resp.text)
+                # print(resp.text)
                 if resp.status_code == 200:
                     data = json.loads(resp.text).get('song_list')
                     if not data:
@@ -50,7 +50,7 @@ class Singlereptile(object):
                         continue
                     for i in data:
                         number = i.get('songmid')
-                        print(number)
+                        # print(number)
                         dic = {'mid': number}
                         self.get_music(dic, author)
         f.close()
@@ -59,7 +59,7 @@ class Singlereptile(object):
     # 得到音乐路径
     def get_music(self,dic,author):
         response = requests.post(self.url + self.get_song, headers=self.headers, data=dic)
-        print(response.text)
+        # print(response.text)
         if response.status_code == 200:
             music_obj = json.loads(response.text)
             music_name = music_obj.get('album')

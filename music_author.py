@@ -32,7 +32,10 @@ class SingerSpider(object):
 
     #  解析模块
     def parse_re(self, resp):
-        tags = re.findall(r'<a href=".*?/artist\?id=\d+" class="nm nm-icn f-thide s-fc0" title=".*?的音乐">(.*?)</a>',resp, re.S)
+        # 获取名字
+        # tags = re.findall(r'<a href=".*?/artist\?id=\d+" class="nm nm-icn f-thide s-fc0" title=".*?的音乐">(.*?)</a>',resp, re.S)
+        # 获取ID
+        tags = re.findall(r'<a href=".*?/artist\?id=(\d+)" class="nm nm-icn f-thide s-fc0" title=".*?的音乐">.*?</a>',resp, re.S)
         for tag in tags:
             self.save_csv(tag)
 
