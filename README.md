@@ -14,5 +14,5 @@
 
 ## 功能
 
-#####1、先运行 music_author.py生成all_singer.csv文件，文件里面是歌手id
-#####2、运行music.py批量下载音乐，音乐在songs目录下
+**1、先运行 music_author.py生成all_singer.csv文件，文件里面是歌手id
+**2、运行music.py批量下载音乐，音乐在songs目录下
