@@ -50,6 +50,8 @@ class Singlereptile(object):
                             os.makedirs("songs")
                         if '//' in name:
                             name = ''.join(name.split('//'))
+                            if '/' in name:
+                                name = ''.join(name.split('/'))
                             # print(name)
                         print("正在下载{}歌曲, 这是第{}首歌曲".format(name, count))
                         path = os.path.join('songs', name + ".mp3")
